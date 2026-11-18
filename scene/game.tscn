@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://di2t3ykyvif7j"]
+
+[ext_resource type="PackedScene" uid="uid://dtoskhh4aschj" path="res://scene/combat_gui.tscn" id="1_kjmw5"]
+[ext_resource type="PackedScene" uid="uid://bc330qoct2h3k" path="res://scene/level_gen.tscn" id="6_m3ox5"]
+
+[node name="GAME" type="Node2D"]
+
+[node name="CombatGUI" parent="." instance=ExtResource("1_kjmw5")]
+layer = 10
+follow_viewport_enabled = false
+
+[node name="LevelGen" parent="." instance=ExtResource("6_m3ox5")]
+z_index = 0

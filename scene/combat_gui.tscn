@@ -1,0 +1,198 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtoskhh4aschj"]
+
+[ext_resource type="Texture2D" uid="uid://gkrcebvual1a" path="res://assets/gui/CrimsonFantasyGUI/Newstuff 1.png" id="1_5l6ov"]
+[ext_resource type="Script" path="res://scripts/ap_cont.gd" id="2_sqon8"]
+[ext_resource type="Texture2D" uid="uid://jj30war8geej" path="res://assets/gui/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="3_410ye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q6cv"]
+atlas = ExtResource("1_5l6ov")
+region = Rect2(0, 0, 5, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c50dk"]
+atlas = ExtResource("1_5l6ov")
+region = Rect2(5, 0, 39, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka8so"]
+atlas = ExtResource("1_5l6ov")
+region = Rect2(43, 0, 5, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ifvd"]
+atlas = ExtResource("3_410ye")
+region = Rect2(0, 160, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_expwe"]
+atlas = ExtResource("3_410ye")
+region = Rect2(0, 192, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a7qn"]
+atlas = ExtResource("3_410ye")
+region = Rect2(223, 192, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0udtb"]
+atlas = ExtResource("3_410ye")
+region = Rect2(256, 129, 33, 33)
+
+[node name="CombatGUI" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="."]
+top_level = true
+light_mask = 512
+visibility_layer = 512
+z_index = 1000
+z_as_relative = false
+texture_repeat = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 41.0
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 0
+columns = 7
+
+[node name="TextureRect2" type="TextureRect" parent="Control/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6q6cv")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(126, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_c50dk")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ka8so")
+stretch_mode = 2
+
+[node name="margin" type="MarginContainer" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Control/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6q6cv")
+stretch_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(126, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_c50dk")
+stretch_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Control/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ka8so")
+stretch_mode = 2
+
+[node name="AP_CONT" type="HFlowContainer" parent="Control"]
+layout_direction = 2
+layout_mode = 2
+offset_top = 17.0
+offset_right = 282.0
+offset_bottom = 54.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/h_separation = -1
+script = ExtResource("2_sqon8")
+
+[node name="Timer" type="Timer" parent="Control/AP_CONT"]
+wait_time = 0.15
+
+[node name="GridContainer2" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 149.0
+offset_bottom = 34.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+columns = 10
+
+[node name="Control" type="Control" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/GridContainer2/Control"]
+texture = SubResource("AtlasTexture_5ifvd")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+tooltip_text = "Defense ratio
+real def = ratio x def"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "80%"
+fit_content = true
+
+[node name="Control2" type="Control" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/GridContainer2/Control2"]
+texture = SubResource("AtlasTexture_expwe")
+centered = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+tooltip_text = "Defense ratio
+real def = ratio x def"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "20%"
+fit_content = true
+
+[node name="Control3" type="Control" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/GridContainer2/Control3"]
+texture = SubResource("AtlasTexture_4a7qn")
+centered = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+tooltip_text = "Defense ratio
+real def = ratio x def"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "0%"
+fit_content = true
+
+[node name="Control4" type="Control" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/GridContainer2/Control4"]
+texture = SubResource("AtlasTexture_0udtb")
+centered = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/GridContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+tooltip_text = "Defense ratio
+real def = ratio x def"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "50%"
+fit_content = true
+
+[connection signal="timeout" from="Control/AP_CONT/Timer" to="Control/AP_CONT" method="_on_timer_timeout"]

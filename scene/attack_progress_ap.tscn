@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ht8s0xba6vj"]
+
+[ext_resource type="Texture2D" uid="uid://c5hv6qckbv5q7" path="res://assets/gui/filled_gem.webp" id="1_r70w7"]
+[ext_resource type="Texture2D" uid="uid://cjin7tuawmdrf" path="res://assets/gui/empty_gem.webp" id="2_tiokl"]
+
+[node name="AttackProgressAP" type="TextureProgressBar"]
+offset_right = 32.0
+offset_bottom = 37.0
+max_value = 25.0
+value = 25.0
+fill_mode = 1
+texture_under = ExtResource("1_r70w7")
+texture_over = ExtResource("2_tiokl")
+texture_progress = ExtResource("1_r70w7")
+tint_progress = Color(1, 0.367408, 0.303566, 1)

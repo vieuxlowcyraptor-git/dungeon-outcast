@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://dttqrrfbv8pu7"]
+
+[ext_resource type="Script" path="res://scripts/fight.gd" id="1_cri7k"]
+[ext_resource type="Texture2D" uid="uid://56h5ou4nyv3q" path="res://background/sky.webp" id="1_eoir6"]
+[ext_resource type="Texture2D" uid="uid://d3qomct4lahbl" path="res://background/trees.png" id="2_vsu0v"]
+[ext_resource type="Theme" uid="uid://bmf31mho1mjjt" path="res://addons/sprout_lands_ui/content/sprout_lands_theme.tres" id="4_fp1no"]
+
+[sub_resource type="Gradient" id="Gradient_7fkbw"]
+colors = PackedColorArray(1, 0.641748, 0.58665, 1, 1, 0, 0.219608, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ut2f"]
+gradient = SubResource("Gradient_7fkbw")
+width = 200
+height = 15
+
+[sub_resource type="Gradient" id="Gradient_2tvi7"]
+colors = PackedColorArray(0.299968, 0.511606, 1, 1, 2.21401e-06, 0, 0.65653, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a662p"]
+gradient = SubResource("Gradient_2tvi7")
+width = 200
+height = 15
+
+[node name="Fight" type="Node"]
+script = ExtResource("1_cri7k")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -1000
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="sky" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+position = Vector2(-137, -86)
+scale = Vector2(0.65, 0.900391)
+texture = ExtResource("1_eoir6")
+centered = false
+
+[node name="tree" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(3.05176e-05, 1)
+scale = Vector2(1.034, 1)
+texture = ExtResource("2_vsu0v")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 1003.0
+offset_bottom = 111.0
+color = Color(1, 0, 0, 0.360784)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 202.0
+offset_bottom = 20.0
+value = 15.0
+texture_progress = SubResource("GradientTexture2D_1ut2f")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 210.0
+offset_top = 5.0
+offset_right = 410.0
+offset_bottom = 20.0
+theme = ExtResource("4_fp1no")
+value = 15.0
+texture_progress = SubResource("GradientTexture2D_a662p")
+
+[node name="Node2D" type="Node2D" parent="."]
